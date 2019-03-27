@@ -7,12 +7,18 @@ import android.database.Cursor;
 import android.net.Uri;
 
 public class ContextProvider extends ContentProvider {
-    public static Context sContext;
+    private static Context sContext;
 
     @Override
     public boolean onCreate() {
         sContext=getContext();
         return true;
+    }
+
+    public static Context get(){
+        if (sContext==null)
+            throw new RuntimeException("ContextProvider.context is null");
+        return sContext;
     }
 
     @Override

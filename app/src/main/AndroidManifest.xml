@@ -3,7 +3,7 @@
 
     <application>
         <provider
-            android:name=".ContextProvider"
+            android:name=".ContextProvider$ContextProviderInner"
             android:authorities="${applicationId}.provider"
             android:exported="false"/>
     </application>
